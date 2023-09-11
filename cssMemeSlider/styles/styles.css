@@ -11,7 +11,7 @@
   gap: 1rem;
   padding: 1rem;
   color: #868889;
-  background-color: #ECF8F9;
+  background-color: #ecf8f9;
 }
 
 .title {
@@ -66,7 +66,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
@@ -78,7 +78,7 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: #55CFCC;
+  background-color: #55cfcc;
 }
 
 .controls__item:hover .controls__button {
@@ -86,19 +86,47 @@
   transition: background 0.3s;
 }
 
-#slide1:checked ~ .mems__content .content__controls .controls__item:nth-child(1),
-#slide2:checked ~ .mems__content .content__controls .controls__item:nth-child(2),
-#slide3:checked ~ .mems__content .content__controls .controls__item:nth-child(3),
-#slide4:checked ~ .mems__content .content__controls .controls__item:nth-child(4) {
+#slide1:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(1),
+#slide2:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(2),
+#slide3:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(3),
+#slide4:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(4) {
   cursor: default;
 }
 
-#slide1:checked ~ .mems__content .content__controls .controls__item:nth-child(1) .controls__button,
-#slide2:checked ~ .mems__content .content__controls .controls__item:nth-child(2) .controls__button,
-#slide3:checked ~ .mems__content .content__controls .controls__item:nth-child(3) .controls__button,
-#slide4:checked ~ .mems__content .content__controls .controls__item:nth-child(4) .controls__button {
+#slide1:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(1)
+  .controls__button,
+#slide2:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(2)
+  .controls__button,
+#slide3:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(3)
+  .controls__button,
+#slide4:checked
+  ~ .mems__content
+  .content__controls
+  .controls__item:nth-child(4)
+  .controls__button {
   background-color: transparent;
-  border: 1px solid #55CFCC;
+  border: 0.1rem solid #55cfcc;
   cursor: default;
 }
 
@@ -134,5 +162,29 @@
   }
   to {
     transform: translate(0);
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .mems__content {
+    flex-direction: column-reverse;
+    padding-top: 0rem;
+  }
+
+  .content__controls {
+    justify-content: center;
+  }
+
+  .controls__button {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .list__item {
+    font-size: 0.5rem;
   }
 }
