@@ -11,32 +11,47 @@
     <header>
       <h1 class="title">CssMemeSlider</h1>
     </header>
-    <main class="main">
-      <input class="input" type="radio" name="slide" id="slide1" checked>
-      <input class="input" type="radio" name="slide" id="slide2">
-      <input class="input" type="radio" name="slide" id="slide3">
-      <input class="input" type="radio" name="slide" id="slide4">
+    <main class="mems__wrapper mems">
+      <input class="mems__input" type="radio" name="item" id="slide1" checked>
+      <input class="mems__input" type="radio" name="item" id="slide2">
+      <input class="mems__input" type="radio" name="item" id="slide3">
+      <input class="mems__input" type="radio" name="item" id="slide4">
 
-      <div class="slides">
-        <img class="image" src="./images/jpg/joke.jpg" alt="image">
-        <img class="image" src="./images/jpg/mem-cat.jpg" alt="image">
-        <img class="image" src="./images/jpg/sources.jpg" alt="image">
-        <img class="image" src="./images/jpg/step.jpg" alt="image">
+      <div class="mems__slider slider">
+        <img class="slider__image" src="./images/jpg/joke.jpg" alt="image">
+        <img class="slider__image" src="./images/jpg/mem-cat.jpg" alt="image">
+        <img class="slider__image" src="./images/jpg/sources.jpg" alt="image">
+        <img class="slider__image" src="./images/jpg/step.jpg" alt="image">
       </div>
 
-      <div class="controls__wrapper">
-        <div class="controls">
-          <label class="slide-control control" for="slide1">
-            <span class="control__btn"></span>
+      <div class="mems__content content">
+        <ul class="content__list list">
+          <li class="list__item">
+            <p>Лучше бы не начинал...</p>
+          </li>
+          <li class="list__item">
+            <p>Биполярка...</p>
+          </li>
+          <li class="list__item">
+            <p>Алле, дайте исходникии...</p>
+          </li>
+          <li class="list__item">
+            <p>Реальность программистов...</p>
+          </li>
+        </ul>
+
+        <div class="content__controls controls">
+          <label class="controls__item" for="slide1">
+            <span class="controls__button"></span>
           </label>
-          <label class="slide-control control" for="slide2">
-            <span class="control__btn"></span>
+          <label class="controls__item" for="slide2">
+            <span class="controls__button"></span>
           </label>
-          <label class="slide-control control" for="slide3">
-            <span class="control__btn"></span>
+          <label class="controls__item" for="slide3">
+            <span class="controls__button"></span>
           </label>
-          <label class="slide-control control" for="slide4">
-            <span class="control__btn"></span>
+          <label class="controls__item" for="slide4">
+            <span class="controls__button"></span>
           </label>
         </div>
       </div>

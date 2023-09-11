@@ -1,57 +1,138 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 .body {
-  padding: 30px;
-  background-color: #DCF3F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: #868889;
+  background-color: #ECF8F9;
 }
 
 .title {
-  text-align: center;
+  font-size: 2rem;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.mems__wrapper {
+  max-width: 40rem;
 }
 
-.slides {
-  display: grid;
-}
-
-.image {
-  grid-area: 1/2/1/2;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-}
-
-.input {
+.mems__input {
   display: none;
 }
 
-.control__btn {
-  display: block;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #47DCE3;
-  border-radius: 50%;
+.mems__slider {
+  display: grid;
 }
 
-.control:active .control__btn {
-  background-color: #47DCE3;
+.slider__image {
+  grid-area: 1/1/1/1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  opacity: 0;
 }
 
-.control:hover .control__btn {
-  transform: scale(1.3);
+.mems__content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.content__list {
+  display: grid;
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+}
+
+.list__item {
+  margin: auto 0;
+  grid-area: 1/1/2/2;
+  opacity: 0;
+}
+
+.content__controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controls__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   cursor: pointer;
+}
+
+.controls__item:active .controls__button {
+  transform: scale(1.2);
+}
+
+.controls__button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #55CFCC;
+}
+
+.controls__item:hover .controls__button {
+  background-color: #5f908b;
+  transition: background 0.3s;
+}
+
+#slide1:checked ~ .mems__content .content__controls .controls__item:nth-child(1),
+#slide2:checked ~ .mems__content .content__controls .controls__item:nth-child(2),
+#slide3:checked ~ .mems__content .content__controls .controls__item:nth-child(3),
+#slide4:checked ~ .mems__content .content__controls .controls__item:nth-child(4) {
+  cursor: default;
+}
+
+#slide1:checked ~ .mems__content .content__controls .controls__item:nth-child(1) .controls__button,
+#slide2:checked ~ .mems__content .content__controls .controls__item:nth-child(2) .controls__button,
+#slide3:checked ~ .mems__content .content__controls .controls__item:nth-child(3) .controls__button,
+#slide4:checked ~ .mems__content .content__controls .controls__item:nth-child(4) .controls__button {
+  background-color: transparent;
+  border: 1px solid #55CFCC;
+  cursor: default;
+}
+
+#slide1:checked ~ .mems__slider .slider__image:nth-child(1),
+#slide2:checked ~ .mems__slider .slider__image:nth-child(2),
+#slide3:checked ~ .mems__slider .slider__image:nth-child(3),
+#slide4:checked ~ .mems__slider .slider__image:nth-child(4) {
+  opacity: 1;
+  animation: deployment 2s ease;
+}
+
+.mems__input#slide1:checked ~ .mems__content .list__item:nth-child(1),
+.mems__input#slide2:checked ~ .mems__content .list__item:nth-child(2),
+.mems__input#slide3:checked ~ .mems__content .list__item:nth-child(3),
+.mems__input#slide4:checked ~ .mems__content .list__item:nth-child(4) {
+  z-index: 1;
+  opacity: 1;
+  animation: on-right 2s ease;
+}
+
+@keyframes deployment {
+  from {
+    transform: scaleY(0.5);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes on-right {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0);
+  }
 }
