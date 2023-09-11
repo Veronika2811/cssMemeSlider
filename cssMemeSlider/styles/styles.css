@@ -165,26 +165,12 @@
   }
 }
 
-@media (max-width: 450px) {
-  .title {
-    font-size: 1rem;
-  }
-
+@media (max-width: 550px) {
   .mems__content {
     flex-direction: column-reverse;
-    padding-top: 0rem;
   }
 
   .content__controls {
     justify-content: center;
-  }
-
-  .controls__button {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-
-  .list__item {
-    font-size: 0.5rem;
   }
 }
