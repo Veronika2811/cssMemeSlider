@@ -41,6 +41,7 @@
 .mems__content {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   padding-top: 1rem;
 }
 
@@ -89,20 +90,26 @@
 #slide1:checked
   ~ .mems__content
   .content__controls
-  .controls__item:nth-child(1),
+  .controls__item:nth-child(1):hover
+  .controls__button,
 #slide2:checked
   ~ .mems__content
   .content__controls
-  .controls__item:nth-child(2),
+  .controls__item:nth-child(2):hover
+  .controls__button,
 #slide3:checked
   ~ .mems__content
   .content__controls
-  .controls__item:nth-child(3),
+  .controls__item:nth-child(3):hover
+  .controls__button,
 #slide4:checked
   ~ .mems__content
   .content__controls
-  .controls__item:nth-child(4) {
-  cursor: default;
+  .controls__item:nth-child(4):hover
+  .controls__button {
+  border-color: #5f908b;
+  transition: background 0.3s;
+  cursor: pointer;
 }
 
 #slide1:checked
@@ -127,7 +134,6 @@
   .controls__button {
   background-color: transparent;
   border: 0.1rem solid #55cfcc;
-  cursor: default;
 }
 
 #slide1:checked ~ .mems__slider .slider__image:nth-child(1),
